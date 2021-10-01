@@ -6,6 +6,7 @@ import About from './components/About';
 import {useState, useEffect} from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 function App() {
+  const LINK = 'https://react-task-1.herokuapp.com/';
   const [showAddTask, setShowAddTask] = useState(false)
   const [tasks, setTasks] = useState([])
 
@@ -19,21 +20,21 @@ function App() {
 
   //Fetch Tasks
   const fetchTasks = async () => {
-    const res = await fetch('http://localhost:5000/tasks')
+    const res = await fetch(`${LINK}tasks`)
     const data = await res.json()
     return data
   }
 
   //Fetch Task
   const fetchTask = async (id) => {
-    const res = await fetch(`http://localhost:5000/tasks/${id}`)
+    const res = await fetch(`${LINK}tasks/${id}`)
     const data = await res.json()
     return data
   }
   
 
 const addTask = async(task) => {
-  const res = await fetch('http://localhost:5000/tasks', {
+  const res = await fetch(`${LINK}tasks`, {
     method: 'POST',
     headers: {
       'Content-type': 'application/json'
@@ -50,7 +51,7 @@ const addTask = async(task) => {
 }
 
 const deleteTask =async (id) => {
-  await fetch(`http://localhost:5000/tasks/${id}`, 
+  await fetch(`${LINK}${id}`, 
   {
     method: 'DELETE'
   }
@@ -64,7 +65,7 @@ const toggleReminder = async (id) => {
   const updTask = {...taskToToggle,
   reminder: !taskToToggle.reminder}
 
-  const res = await fetch(`http://localhost:5000/tasks/${id}`,{
+  const res = await fetch(`${LINK}${id}`,{
   method: 'PUT', 
   headers: {
       'Content-type': 'application/json'

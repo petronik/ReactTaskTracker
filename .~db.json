@@ -35,6 +35,12 @@
       "day": "asdasdas",
       "reminder": true,
       "id": 6
+    },
+    {
+      "text": "Buy adidas",
+      "day": "Today at 16:00",
+      "reminder": false,
+      "id": 7
     }
   ]
 }
