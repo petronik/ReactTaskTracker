@@ -3,7 +3,7 @@
     {
       "text": "Walmart Store",
       "day": "Monday, 13 Aug",
-      "reminder": true,
+      "reminder": false,
       "id": 1
     },
     {
