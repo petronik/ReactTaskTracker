@@ -11,6 +11,12 @@
       "day": "Thursday, 16 Sept",
       "reminder": true,
       "id": 2
+    },
+    {
+      "text": "Buy a car",
+      "day": "Monday 9:00",
+      "reminder": false,
+      "id": 3
     }
   ]
 }
